@@ -1,0 +1,42 @@
+.technologi{
+    .interest{
+        &__wrapper{
+             margin-top: 80px; 
+             display: flex;
+             justify-content: space-between; 
+             flex-wrap: wrap;
+        }
+        &__items{
+            margin-top: 40px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+        }
+        &__text{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10px;
+            
+        }
+        &__scale{
+            width: 350px;
+            height: 14px;
+            background-color: $main-color2;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        &_title-before{
+            position: relative;
+            @include before_circle;
+            &:before{
+                left: -10px;
+                top: -7px;
+            }
+        }
+        &__inside{
+            background-color: $main-color;
+            height: 14px;
+            border-radius: 5px;
+        }
+    }
+}

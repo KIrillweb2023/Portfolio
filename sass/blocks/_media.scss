@@ -1,0 +1,348 @@
+@media (max-width: 1439px){
+    .sidebar{
+        display: none;
+    }
+    .contacts{
+        &__img{
+            img{
+            object-fit: cover;
+            }
+        }
+    }
+}
+@media (max-width: 1200px){
+    .container{
+        max-width: 960px;
+    }
+    .level{
+        &__wrapper{
+            padding: 40px 20px 0 20px;
+            column-gap: 80px;
+        }
+    }
+    .name{
+        &__wrapper{
+            grid-template-columns: 400px 520px;
+            column-gap: 50px;
+        }
+        &__skills{
+            column-gap: 20px;
+            grid-template: repeat(2,minmax(115, auto))/repeat(2,250px);
+            &-item{
+                grid-template-columns: 40px 195px;
+                column-gap: 15px;
+            }
+        }
+    }
+    .portfolio{
+        &__wrapper{
+            grid-template-columns: repeat(auto-fit, 280px);
+            grid-auto-rows: 280px;
+            justify-content: space-around;
+            row-gap: 35px;
+            .horizonal, .vertical{
+                grid-row: unset;
+                grid-column: unset;
+            }
+        }
+    }
+    .prizes{
+        &__item{
+            width: 280px;
+        }
+        &__wrapper{
+            padding-left: 10px;
+        }
+    }
+    .contacts {
+        &__wrapper {
+            padding: 0;
+            grid-template-columns: 400px 520px;
+        }
+        &__form {
+            grid-template: 45px 190px 45px / repeat(2, 250px);
+        }
+    }
+
+
+@media (max-width: 992px){
+    .container{
+        max-width: 720px;
+    }
+    .title{
+        &_fz36{
+            font-size: 30px;
+        }
+    }
+    
+    .technologi{
+        &__wrapper{
+            justify-content: space-around;
+        }
+        &__item{
+            margin-top: 30px;
+        }
+        .interest__wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    }
+    .level{
+        &__wrapper{
+            column-gap: 60px;
+            grid-template-columns: repeat(2, 320px);
+        }
+    }
+    
+    .name{
+        &__wrapper{
+            grid-template-columns: 300px 380px;
+            &__img{
+                img{
+                    height: 600px;
+                }
+            }
+        }
+       
+        &__skills{
+            grid-template-columns: 380px;
+            grid-auto-rows: minmax(115px, auto);
+            &-item{
+                grid-template-columns: 40px 320px;
+                column-gap: 20px;
+            }
+        }
+    }
+    .prizes{
+       
+        &__item{
+            width: 210px;
+            margin-top: 35px;
+            font-size: 12px;
+            &-title{
+                font-size: 12px;
+            }
+        }
+        &__descr{
+            font-size: 10px;
+        }
+    }
+    .contacts {
+        &__wrapper {
+            grid-template-columns: 300px 400px;
+        }
+        &__form {
+            grid-template: 45px 190px 45px / repeat(2, 195px);
+        }
+        &__btn {
+            padding: 8px 25px;
+            line-height: 16px;
+        }
+    }
+    
+@media (max-width: 768px){
+    .container{
+        max-width: 540px;
+    }
+    .technologi{
+        &__wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+        .interest__wrapper{
+            justify-content: center;
+            &__items{
+                margin-top: 60px;
+            }
+        }
+    }
+    .title{
+        &_fz48{
+            font-size: 30px;
+            line-height: 50px;
+        }
+    }
+    .promo{
+        &__title{
+            width: 300px;
+            line-height: 39px;
+        }
+    }
+    .name{
+        padding-top: 40px;
+        &__wrapper{
+            grid-template: 340px auto auto / 1fr;
+          
+        }
+        &__skills{
+            row-gap: 50px;
+        }
+        
+        &__skills{
+            grid-template-columns: repeat(2, 260px);
+            &-item{
+                grid-template-columns: 40px 200px;
+                column-gap: 20px;
+            }
+        }
+    }
+    .level{
+        padding-top: 40px;
+        &__wrapper{
+            grid-template-columns: 1fr;
+            column-gap: 60px;
+            row-gap: 40px;
+        }
+    }
+    .portfolio{
+        padding-top: 40px;
+    }
+    .prizes{
+        &__wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__item{
+            margin-top: 35px;
+            width: 60%;
+        }
+        &__descr{
+            font-size: 12px;
+        }
+    }
+    .contacts {
+        padding-top: 40px;
+        &__photo {
+            display: none;
+        }
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+        &__form {
+            grid-template: 45px 190px 45px / repeat(2, 250px);
+        }
+    }
+}
+@media (max-width: 576px){
+    .container{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .title{
+        &_fz48{
+            font-size: 28px;
+            line-height: 50px;
+        }
+        &_fz36{
+            font-size: 24px;
+        }
+    }
+    .hamburger{
+        right: 20px;
+    }
+    .menu{
+        &__block{
+            width: 250px;
+        }
+        &__social{
+            margin-left: 40px;
+            bottom: 20px;
+        }
+        
+    }
+    .menu__btn {
+        width: 170px;
+        font-size: 15px;
+    }
+    .modal{
+        .modal__window{
+            width: 300px;
+            margin: 100px auto;
+        }
+        .modal__btn{
+            width: 220px;
+        }
+        .modal__policy{
+            font-size: 14px;
+        }
+    }
+    .name{
+        &__wrapper{
+            grid-template: 340px auto auto / 1fr;
+        }
+        &__skills{
+            grid-template-columns: 1fr;
+        }
+    }
+    .level{
+        &__wrapper{
+            padding: 40px 5px 0 5px;
+        }
+        &__column{
+            &-location{
+                font-size: 12px;
+            }
+        }
+    }
+    .technologi{
+        &__subtitle{
+            font-size: 22px;
+        }
+    .interest{
+        &__items{
+                width: 300px;
+        }
+        &__scale{
+            width: 300px;
+        }
+    }
+}
+        .prizes{
+            &__wrapper{
+                flex-direction: column;
+                align-items: center;
+            }
+            &__sale{
+                font-size: 12px;
+            }
+            &__item{
+                width: 250px;
+                margin-top: 35px;
+                &-title{
+                    font-size: 12px;
+                } 
+            }
+        }
+    }
+}
+    .contacts {
+        &__img{
+            display: none;
+        }
+        padding-bottom: 50px;
+        &__form {
+            grid-template: 45px 45px 190px minmax(45px, auto) / 1fr;
+        }
+        &__textarea {
+            grid-column: unset;
+            width: 100%;
+        }
+        &__triggers {
+            grid-column: unset;
+            grid-template-columns: 1fr;
+            column-gap: unset;
+            row-gap: 20px;
+        }
+        &__btn {
+            order: 2;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+        &__policy {
+            width: 180px;
+            margin: 0 auto;
+            line-height: 18px;
+        }
+    }
+}

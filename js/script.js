@@ -44,6 +44,30 @@ class WorkSkills{
         this.parent.append(element);
     }
 }
+new WorkSkills(
+    '"name__skills-circle"',
+    '"icons/about_me/web_development.svg"',
+    '"webdeb"',
+    'Web-разработка',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua',
+    '.name .name__skills'
+).render();
+new WorkSkills(
+    '"name__skills-circle"',
+    '"icons/about_me/mobile_dev.svg"',
+    '"webdeb1"',
+    'Разработка приложений',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua',
+    '.name .name__skills'
+).render();
+new WorkSkills(
+    '"name__skills-circle"',
+    '"icons/about_me/design.svg"',
+    '"webdeb2"',
+    ' UI/UX Design',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua',
+    '.name .name__skills'
+).render();
 
 class Technologi{
     constructor(src, alt, title, descr, parentElement){
@@ -67,33 +91,73 @@ class Technologi{
         this.parentTwo.append(emet);
     }
 }
-const getStatus = async (url) =>{
-    const result = await fetch(url);
+new Technologi(
+    '"icons/skills/html5.svg"',
+    '"html5"',
+    'HTML5',
+    'Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта',
+    '.technologi .container .technologi__wrapper'
+).render();
 
-    if(!result.ok){
-        throw new Error(`Could not fetch ${url}, status: ${result.status}`);
-    }
-    return await result.json();
-}
+new Technologi(
+    '"icons/skills/css3.svg"',
+    '"css3"',
+    'CSS3',
+    'Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!',
+    '.technologi .container .technologi__wrapper'
+).render();
 
-getStatus('http://localhost:3000/card')
-.then(data =>{
-    data.forEach(({img, alt, title, descr})=>{
-        new Technologi(img, alt, title, descr, '.technologi .container .technologi__wrapper').render();
-    });
-});
-getStatus(' http://localhost:3000/Prices')
-.then(data =>{
-    data.forEach(({title, sale, descr})=>{
-        new Prices(title, sale, descr, '.prizes .prizes__wrapper').render();
-    });
-});
-getStatus(' http://localhost:3000/skills')
-.then(data =>{
-    data.forEach(({circle, src, alt, title, descr})=>{
-        new WorkSkills(circle, src, alt, title, descr, '.name .name__skills').render();
-    });
-});
+new Technologi(
+    '"icons/skills/js.svg"',
+    '"javascript"',
+    'Java Script',
+    'Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое',
+    '.technologi .container .technologi__wrapper'
+).render();
+
+new Technologi(
+    '"icons/skills/jquery.svg"',
+    '"jquery"',
+    'Jquery',
+    'Библиотека Jquery позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует',
+    '.technologi .container .technologi__wrapper'
+).render();
+
+new Technologi(
+    '"icons/skills/node.js.svg"',
+    '"Node.js"',
+    'Node.js',
+    'Эта платформа позволяет создавать бэкенд для вашего продукта - “мозги”, которые будут выполнять действия, которые пользователь не видит',
+    '.technologi .container .technologi__wrapper'
+).render();
+
+//const getStatus = async (url) =>{
+   // const result = await fetch(url);
+
+    //if(!result.ok){
+       // throw new Error(`Could not fetch ${url}, status: ${result.status}`);
+   // }
+  //  return await result.json();
+//}
+
+//getStatus('http://localhost:3000/card')
+//.then(data =>{
+//    data.forEach(({img, alt, title, descr})=>{
+//        new Technologi(img, alt, title, descr, '.technologi .container .technologi__wrapper').render();
+ //   });
+//});
+//getStatus(' http://localhost:3000/Prices')
+//.then(data =>{
+//    data.forEach(({title, sale, descr})=>{
+ //       new Prices(title, sale, descr, '.prizes .prizes__wrapper').render();
+ //   });
+//});
+//getStatus(' http://localhost:3000/skills')
+//.then(data =>{
+//    data.forEach(({circle, src, alt, title, descr})=>{
+//        new WorkSkills(circle, src, alt, title, descr, '.name .name__skills').render();
+//    });
+//});
 // за 5мин написал
 class Prices{
     constructor(title, sale, descr, parentElement){
@@ -116,6 +180,25 @@ class Prices{
         this.parent.append(newElement);
     }
 }
+
+new Prices(
+    'Корпоративный сайт',
+    'от 20000 руб.',
+    'Сайт для вашего бизнеса или компании',
+    '.prizes .prizes__wrapper'
+).render();
+new Prices(
+    'Landing-page',
+    'от 8000 руб.',
+    'Одностраничный сайт для презентации услуг/товаров/...',
+    '.prizes .prizes__wrapper'
+).render();
+new Prices(
+    'Интернет-магазин',
+    'от 30000 руб.',
+    'Инструмент для ваших продаж в сети',
+    '.prizes .prizes__wrapper'
+).render();
 //modal 
 const modal = document.querySelector('.modal');
 const openModal = document.querySelector('.menu__btn');
