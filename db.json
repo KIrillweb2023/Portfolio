@@ -1,0 +1,88 @@
+{
+  "card": [
+    {
+      "img": "icons/skills/html5.svg",
+      "alt": "html5",
+      "title": "HTML5",
+      "descr": "Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта"
+    },
+    {
+      "img": "icons/skills/css3.svg",
+      "alt": "css3",
+      "title": "CSS3",
+      "descr": "Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!"
+    },
+    {
+      "img": "icons/skills/js.svg",
+      "alt": "javascript",
+      "title": "Java Script",
+      "descr": "Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое"
+    },
+    {
+      "img": "icons/skills/jquery.svg",
+      "alt": "jquery",
+      "title": "Jquery",
+      "descr": "Библиотека Jquery позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует"
+    },
+    {
+      "img": "icons/skills/node.js.svg",
+      "alt": "Node.js",
+      "title": "Node.js",
+      "descr": "Эта платформа позволяет создавать бэкенд для вашего продукта - “мозги”, которые будут выполнять действия, которые пользователь не видит"
+    }
+  ],
+  "Prices": [
+    {
+      "title": "Корпоративный сайт",
+      "sale": "от 20000 руб.",
+      "descr": "Сайт для вашего бизнеса или компании"
+    },
+    {
+      "title": "Landing-page",
+      "sale": "от 8000 руб.",
+      "descr": "Одностраничный сайт для презентации услуг/товаров/..."
+    },
+    {
+      "title": "Интернет-магазин",
+      "sale": "от 30000 руб.",
+      "descr": "Инструмент для ваших продаж в сети"
+    }
+  ],
+  "skills": [
+    {
+      "circle": "name__skills-circle",
+      "src": "icons/about_me/web_development.svg",
+      "alt": "webdeb",
+      "title": "Web-разработка",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      "circle": "name__skills-circle",
+      "src": "icons/about_me/mobile_dev.svg",
+      "alt": "webdeb1",
+      "title": "Разработка приложений",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      "circle": "name__skills-circle",
+      "src": "icons/about_me/design.svg",
+      "alt": "webdeb2",
+      "title": "UI/UX Design",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua"
+    }
+  ],
+  "request": [
+    {
+      "name": "kirill",
+      "email": "wib32469@gmail.com",
+      "text": "",
+      "id": 1
+    },
+    {
+      "name": "kirill",
+      "email": "wib32469@gmail.com",
+      "text": "",
+      "id": 2
+    }
+  ]
+}
