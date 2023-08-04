@@ -3,7 +3,7 @@
         &__wrapper{
              margin-top: 80px; 
              display: flex;
-             justify-content: space-between; 
+             column-gap: 45px;
              flex-wrap: wrap;
         }
         &__items{

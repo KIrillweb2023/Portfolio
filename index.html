@@ -56,7 +56,6 @@
                         <li class="menu__link"><a href="#price">ПРАЙС-ЛИСТ</a></li>
                         <li class="menu__link"><a href="#contact">КОНТАКТЫ</a></li>
                     </ul>
-                    <button class="menu__btn">Связь со мной</button>
             </nav>
 
             <div class="menu__social">
@@ -70,17 +69,15 @@
     
     <section class="promo">
         <div class="hamburger">
-            <span></span>
-            <span class="long"></span>
-            <span></span>
+          <img src="./icons/hamburger.png" alt="hamburger">
         </div>
         <div class="container">
             <div class="circle"></div>
             <div class="title title_fz16 promo__subtitle">Меня зовут Кирилл</div>
             <h1 class="title title_fz48 promo__title">Я web-разработчик<br>из города Уфа</h1>
             <div class="promo__btns">
-                <a href="#" class="promo__link btn">Портфолио</a>
-                <a href="#" class="promo__link btn">Про меня</a>
+                <a href="#work" class="promo__link btn">Портфолио</a>
+                <a href="#me" class="promo__link btn">Про меня</a>
             </div>
         </div>
     </section>
@@ -97,10 +94,9 @@
                     <h2 class="title title_fz16 name_title" id="me">Про меня</h2>
                     <div class="title title_fz36 name__subtitle">Меня зовут Кирилл</div>
                     <div class="divider"></div>
-                    <p class="name__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    <p class="name__text">Всем присутствующим на моем сайте привет, меня зовут Кирилл мне 15 лет и я web-разработчик по части Front-end
+                        Занимаюсь web-разработкой более одного года и у меня есть определенный стек знаний при которых я могу создать вам ваш интернет-продукт 
+                        На данный момент я развиваюсь в плане backend части  
                     </p>
                 </div>
                 <div class="name__skills"></div>
@@ -236,6 +232,15 @@
                             <div class="interest__inside" style="width: 75%"></div>
                         </div>
                     </div>
+                    <div class="interest__items">
+                        <div class="interest__text">
+                            <div class="title title_fz14 interest_title-before">Читабельный код</div>
+                            <div class="interest__prozent">100%</div>
+                        </div>
+                        <div class="interest__scale">
+                            <div class="interest__inside" style="width: 100%"></div>
+                        </div>
+                    </div>
                 </div>
            </div>
         </div>
@@ -258,13 +263,13 @@
                     <img src="img/works/vegy.jpg" alt="eat">
                 </a>
                 <a href="#" class="portfolio__item">
-                    <img src="img/works/bread.jpg" alt="test">
+                    <img src="img/works/img3.jpg" alt="test">
                 </a>
                 <a href="#" class="portfolio__item vertical">
                     <img src="img/works/plans.jpg" alt="test">
                 </a>
-                <a href="https://kirillweb2023.github.io/skaifit/" class="portfolio__item horizonal">
-                    <img src="img/works/img3.jpg" alt="test">
+                <a href="#" class="portfolio__item horizonal">
+                    <img src="img/works/main_bg.png" alt="test">
                 </a>
             </div>
         </div>
@@ -335,39 +340,6 @@
         </div>
     </section>
 
-
-   <div class="modal">
-        <div class="modal__window">
-            <div class="modal__close">
-                <img src="icons/Close.png" alt="">
-            </div>
-            <div class="modal__content">
-                <div class="modal__title">Свяжитесь со мной</div>
-                <form action="#" class="modal__form">
-                    <div class="modal__input">
-                        <input required name="name" id="name" type="text">
-                        <label for="name">Ваше имя</label>
-                    </div>
-                    <div class="modal__input">
-                        <input required name="email" id="email" type="email">
-                        <label for="email">Ваша почта</label>
-                    </div>
-
-                    <div class="modal__textarea">
-                        <textarea name="text" id="text"></textarea>
-                        <label for="text">Ваше сообщение</label>
-                    </div>
-                    <div class="modal__triggers">
-                        <button class="modal__btn">Отправить сообщение</button>
-                        <div class="modal__policy">
-                            <input required type="checkbox">
-                            <span>Я согласен(а) с <a href="#">политикой конфиденциальности</a></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-   </div>
 
     <script src="js/script.js"></script>
 </body>

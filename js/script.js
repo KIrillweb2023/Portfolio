@@ -1,22 +1,25 @@
 const hamburger = document.querySelector('.hamburger'),
       menu = document.querySelector('.menu'),
-      closeElem = document.querySelector('.menu__close');
+      closeElem = document.querySelector('.menu__close'),
+      link = document.querySelectorAll('.menu__link');
 
 hamburger.addEventListener('click', () => {
     menu.classList.add('active');
     document.body.style.overflow = 'hidden';
 });
 
-closeElem.addEventListener('click', () => {
+closeElem.addEventListener('click', (e) => {
     menu.classList.remove('active');
     document.body.style.overflow = '';
+    
+    console.log(e.target);
+  
 });
-
-const counters = document.querySelectorAll('.interest__scale'),
-      lines = document.querySelectorAll('.interest__inside');
-
-counters.forEach((item, i) => {
-    lines[i].style.width = item.innerHTML;
+link.forEach(a =>{
+    a.addEventListener('click', () =>{
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
 });
 
 class WorkSkills{
@@ -30,42 +33,41 @@ class WorkSkills{
     }
     render(){
         const element = document.createElement('div');
+        element.classList.add('name__skills-item');
         element.innerHTML = `
-        <div class="name__skills-item">
-            <div class=${this.circle}>
-                <img src=${this.src} alt=${this.alt} class="name__imges">
-            </div>
-                <div>
-                    <div class="title title_fz14">${this.title}</div>
-                    <div class="name__skills-text">${this.desrc}</div>
-            </div>
+        <div class="${this.circle}">
+            <img src="${this.src}" alt="${this.alt}" class="name__imges">
+        </div>
+            <div>
+            <div class="title title_fz14">${this.title}</div>
+            <div class="name__skills-text">${this.desrc}</div>
         </div>
         `;
         this.parent.append(element);
     }
 }
 new WorkSkills(
-    '"name__skills-circle"',
-    '"icons/about_me/web_development.svg"',
-    '"webdeb"',
+    'name__skills-circle',
+    'icons/about_me/web_development.svg',
+    'webdeb',
     'Web-разработка',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua',
+    'Занимаюсь Web-разработкой более одного года и достиг Frontend-части',
     '.name .name__skills'
 ).render();
 new WorkSkills(
-    '"name__skills-circle"',
-    '"icons/about_me/mobile_dev.svg"',
-    '"webdeb1"',
+    'name__skills-circle',
+    'icons/about_me/mobile_dev.svg',
+    'webdeb1',
     'Разработка приложений',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua',
+    'Опыта с разработкой приложений к сожелению небыло, но в дальнейшем будет',
     '.name .name__skills'
 ).render();
 new WorkSkills(
-    '"name__skills-circle"',
-    '"icons/about_me/design.svg"',
-    '"webdeb2"',
+    'name__skills-circle',
+    'icons/about_me/design.svg',
+    'webdeb2',
     ' UI/UX Design',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua',
+    'Также есть опыт с графическими редакторами(т.е Figma, Photoshop) в которых не однозначто создавал макеты для верстки сайта',
     '.name .name__skills'
 ).render();
 
@@ -78,60 +80,86 @@ class Technologi{
         this.parentTwo = document.querySelector(parentElement);
     }
     render(){
-        const emet = document.createElement('div');
-        emet.innerHTML = `
-        <div class="technologi__item">
+        const element = document.createElement('div');
+        element.classList.add('technologi__item');
+        element.innerHTML = `
             <div class="technologi__icon">
-            <img src=${this.src} alt=${this.alt}>
+                <img src="${this.src}" alt="${this.alt}">
             </div>
             <div class="title title_fz14 technologi__item-title">${this.title}</div>
             <div class="technologi__item-descr">${this.descr}</div>
-        </div>
         `;
-        this.parentTwo.append(emet);
+        this.parentTwo.append(element);
     }
 }
 new Technologi(
-    '"icons/skills/html5.svg"',
-    '"html5"',
+    'icons/skills/html5.svg',
+    'html5',
     'HTML5',
     'Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта',
-    '.technologi .container .technologi__wrapper'
+    '.technologi .technologi__wrapper'
 ).render();
 
 new Technologi(
-    '"icons/skills/css3.svg"',
-    '"css3"',
+    'icons/skills/css3.svg',
+    'css3',
     'CSS3',
     'Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!',
-    '.technologi .container .technologi__wrapper'
+    '.technologi .technologi__wrapper'
 ).render();
 
 new Technologi(
-    '"icons/skills/js.svg"',
-    '"javascript"',
+    'icons/skills/js.svg',
+    'javascript',
     'Java Script',
     'Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое',
-    '.technologi .container .technologi__wrapper'
+    '.technologi .technologi__wrapper'
 ).render();
 
 new Technologi(
-    '"icons/skills/jquery.svg"',
-    '"jquery"',
-    'Jquery',
-    'Библиотека Jquery позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует',
-    '.technologi .container .technologi__wrapper'
+    'icons/skills/bootstrap.png',
+    'bootstrap',
+    'BOOTSTRAP',
+    'Библиотека bootstrap позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует',
+    '.technologi .technologi__wrapper'
 ).render();
 
 new Technologi(
-    '"icons/skills/node.js.svg"',
-    '"Node.js"',
-    'Node.js',
+    'icons/skills/php2.png',
+    'PHP7',
+    'PHP7',
     'Эта платформа позволяет создавать бэкенд для вашего продукта - “мозги”, которые будут выполнять действия, которые пользователь не видит',
-    '.technologi .container .technologi__wrapper'
+    '.technologi .technologi__wrapper'
+).render();
+new Technologi(
+    'icons/skills/gulp.png',
+    'Gulp',
+    'GULP',
+    'Это планировщик задач который компилирует и собирает ваш проект в единое целое',
+    '.technologi .technologi__wrapper'
+).render();
+new Technologi(
+    'icons/skills/git.png',
+    'Git',
+    'GIT',
+    'C помощью этой технологии ваш проект будет разбит по коммитам, что в дальнейшеq ошибке в коде или в неправильной верстке мы смогли откатить версию продукта',
+    '.technologi .technologi__wrapper'
+).render();
+new Technologi(
+    'icons/skills/figma.png',
+    'Figma',
+    'FIGMA',
+    'Это графический онлайн-редактор из которого будет воспроизводится верстка вашего продукта',
+    '.technologi .technologi__wrapper'
+).render();
+new Technologi(
+    'icons/skills/webpack.png',
+    'webpack',
+    'WEBPACK',
+    'Это сборщик модулей для JavaScript. Он позволяет разделять код на модули, которые затем могут быть импортированы и использованы в других частях приложения',
+    '.technologi .technologi__wrapper'
 ).render();
 
-//const getStatus = async (url) =>{
    // const result = await fetch(url);
 
     //if(!result.ok){
@@ -167,17 +195,16 @@ class Prices{
         this.parent = document.querySelector(parentElement);
     }
     render(){
-        const newElement = document.createElement('div');
-        newElement.innerHTML = `
-        <div class="prizes__item">
-            <div class="prizes__text">
-                <div class="title title_fz14 prizes__item-title">${this.title}</div>
-                <div class="prizes__sale">${this.sale}</div>
-            </div>
-            <div class="prizes__descr">${this.descr}</div>
+        const element = document.createElement('div');
+        element.classList.add('prizes__item');
+        element.innerHTML = `
+        <div class="prizes__text">
+            <div class="title title_fz14 prizes__item-title">${this.title}</div>
+            <div class="prizes__sale">${this.sale}</div>
         </div>
+        <div class="prizes__descr">${this.descr}</div>
         `;
-        this.parent.append(newElement);
+        this.parent.append(element);
     }
 }
 
@@ -199,42 +226,19 @@ new Prices(
     'Инструмент для ваших продаж в сети',
     '.prizes .prizes__wrapper'
 ).render();
-//modal 
-const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.menu__btn');
-const closeModal = document.querySelector('.modal__close');
+new Prices(
+    'Сайт-визитка',
+    'от 5000 руб.',
+    'Небольшой сайт, как правило, состоящий из одной веб-страниц...',
+    '.prizes .prizes__wrapper'
+).render();
+new Prices(
+    'Многостраничник',
+    'от 15000 руб.',
+    'Интернет продукт состоящий неменее трех страниц',
+    '.prizes .prizes__wrapper'
+).render();
 
-function modalOpen(){
-    openModal.addEventListener('click', () =>{
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-        document.body.style.overflow = 'hidden';
-    });
-}
-modalOpen();
-
-function modalClose(){
-    closeModal.addEventListener('click', () =>{
-        modal.classList.remove('show');
-        modal.classList.add('hide');
-        document.body.style.overflow = '';
-    });
-}
-modalClose();
-
-modal.addEventListener('click', (e) =>{
-        if(e.target === modal){
-            modal.classList.add('hide');
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
-        }
-    });
-document.addEventListener('keydown', (e) =>{
-    if(e.code === 'Escape'){
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-    }
-});
   //form
 const forms = document.querySelectorAll('form');
 
@@ -292,3 +296,6 @@ function dataPost(form){
         });    
     });
 }
+
+
+// animations 

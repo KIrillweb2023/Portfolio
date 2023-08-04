@@ -15,7 +15,6 @@
         grid-template-rows: minmax(245px, auto) minmax(255px, auto);
         grid-auto-rows: minmax(245px, auto);
         column-gap: 70px;
-        row-gap: 40px;
     }
     &_title{
         position: relative;
@@ -31,7 +30,7 @@
     &__text{
         margin-top: 20px;
         line-height: 21px;
-        font-size: 14px;
+        font-size: 16px;
     }
     &__skills{
         display: grid;
@@ -41,12 +40,12 @@
         row-gap: 20px;
         &-item{
             display: grid;
-            grid-template-columns: 40px 200px;
+            grid-template-columns: 40px 260px;
             column-gap: 20px;
         }
         &-text{
             font-weight: 500;
-            font-size: 12px;
+            font-size: 14px;
             line-height: 18px;
             color: #000000;
         }
@@ -54,7 +53,7 @@
             padding: 15px 0 0 15px;
             position: relative;
             @include before_circle;
-            &::before{
+            &:before{
                 top: 0;
                 right: 10px;
             }
