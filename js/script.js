@@ -22,55 +22,28 @@ link.forEach(a =>{
     });
 });
 
-class WorkSkills{
-    constructor(circle, src, alt, title, descr, parentList){
-        this.circle = circle;
-        this.src = src;
-        this.alt = alt;
-        this.title = title;
-        this.desrc = descr;
-        this.parent = document.querySelector(parentList);
-    }
-    render(){
-        const element = document.createElement('div');
-        element.classList.add('name__skills-item');
-        element.innerHTML = `
-        <div class="${this.circle}">
-            <img src="${this.src}" alt="${this.alt}" class="name__imges">
-        </div>
-            <div>
-            <div class="title title_fz14">${this.title}</div>
-            <div class="name__skills-text">${this.desrc}</div>
-        </div>
-        `;
-        this.parent.append(element);
-    }
-}
-new WorkSkills(
-    'name__skills-circle',
-    'icons/about_me/web_development.svg',
-    'webdeb',
-    'Web-разработка',
-    'Занимаюсь Web-разработкой более одного года и достиг Frontend-части',
-    '.name .name__skills'
-).render();
-new WorkSkills(
-    'name__skills-circle',
-    'icons/about_me/mobile_dev.svg',
-    'webdeb1',
-    'Разработка приложений',
-    'Опыта с разработкой приложений к сожелению небыло, но в дальнейшем будет',
-    '.name .name__skills'
-).render();
-new WorkSkills(
-    'name__skills-circle',
-    'icons/about_me/design.svg',
-    'webdeb2',
-    ' UI/UX Design',
-    'Также есть опыт с графическими редакторами(т.е Figma, Photoshop) в которых не однозначто создавал макеты для верстки сайта',
-    '.name .name__skills'
-).render();
+function scrollTop(){
+    const scroll = document.querySelector('.topScroll');
 
+    window.addEventListener('scroll', () =>{
+        if(window.scrollY >= 1000){
+            scroll.addEventListener('click', () =>{
+                setTimeout(() =>{
+                    scroll.style.transform = "scale(80%)";
+                }, 100)
+                setInterval(() =>{
+                    scroll.style.transform = "";
+                }, 300)
+            });
+            scroll.classList.add('active');
+           
+        } else {
+            scroll.classList.remove('active');
+        }
+    });
+}
+scrollTop();
+console.log(window.scrollY);
 class Technologi{
     constructor(src, alt, title, descr, parentElement){
         this.src = src;
@@ -160,33 +133,6 @@ new Technologi(
     '.technologi .technologi__wrapper'
 ).render();
 
-   // const result = await fetch(url);
-
-    //if(!result.ok){
-       // throw new Error(`Could not fetch ${url}, status: ${result.status}`);
-   // }
-  //  return await result.json();
-//}
-
-//getStatus('http://localhost:3000/card')
-//.then(data =>{
-//    data.forEach(({img, alt, title, descr})=>{
-//        new Technologi(img, alt, title, descr, '.technologi .container .technologi__wrapper').render();
- //   });
-//});
-//getStatus(' http://localhost:3000/Prices')
-//.then(data =>{
-//    data.forEach(({title, sale, descr})=>{
- //       new Prices(title, sale, descr, '.prizes .prizes__wrapper').render();
- //   });
-//});
-//getStatus(' http://localhost:3000/skills')
-//.then(data =>{
-//    data.forEach(({circle, src, alt, title, descr})=>{
-//        new WorkSkills(circle, src, alt, title, descr, '.name .name__skills').render();
-//    });
-//});
-// за 5мин написал
 class Prices{
     constructor(title, sale, descr, parentElement){
         this.title = title;
@@ -238,64 +184,52 @@ new Prices(
     'Интернет продукт состоящий неменее трех страниц',
     '.prizes .prizes__wrapper'
 ).render();
+new Prices(
+    'Дизайн',
+    'по договоренности',
+    'Создание дизайна для вашего продукта',
+    '.prizes .prizes__wrapper'
+).render();
 
   //form
-const forms = document.querySelectorAll('form');
+const form = document.querySelector('.contacts__form');
 
-const serverResponse = {
-    loading: '../src/icons/spinner.svg',
+const messange = {
+    loading: './icons/spinner.svg',
     completed: 'Спасибо! Я вам перезвоню в ближайшее время',
     failed: 'Ошибка!'
 };
-forms.forEach(item =>{
-    dataPost(item);
-});
+dataPost(form);
 
-const postingData = async (url, data) =>{
-    const result = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: data
-    });
-    return await result.json();
-}
 function dataPost(form){
     form.addEventListener('submit', (e) =>{
         e.preventDefault();
 
-        let postMassenge = document.createElement('img');
-        postMassenge.src = serverResponse.loading;
-        //form.append(postMassenge);
-        form.insertAdjacentElement('afterend', postMassenge);
+        let statusBrowser = document.createElement('img');    // создал элемент
+        statusBrowser.classList.add('status');      // добавил класс к елементу
+        statusBrowser.src = messange.loading;      // загруска при начале отправки на сервер
+        form.append(statusBrowser);      // Добавил в форму текст
 
-        const text = document.createElement('div');
-        form.append(text);
+        const request = new XMLHttpRequest();
+        request.open('POST', './mailer/smart.php'); 
 
-        const formRequest = new FormData(form);
+        
+        const servDat = new FormData(form); 
+        request.send(servDat);  
 
-        const json = JSON.stringify(Object.fromEntries(formRequest.entries()));
-        postingData('http://localhost:3000/request', json)
-        .then(data => {
-            console.log(data);
-            setInterval(() =>{text.textContent = serverResponse.completed;
-            }, 2200);
-            setTimeout(() =>{text.remove();}, 5000);
-            setTimeout(() =>{postMassenge.remove();
-            }, 2000);
-        }).catch(() =>{
-            setInterval(() =>{text.textContent = serverResponse.failed;
-            }, 2200);
-            setTimeout(() =>{text.remove();
-            }, 5000);
-            setTimeout(() =>{ postMassenge.remove();
-            }, 2000);
-        }).finally(() =>{
-            form.reset();
-        });    
-    });
+        request.addEventListener('load', (e) => {
+            if(request.status === 200){
+                console.log(request.status);
+                statusBrowser.textContent = messange.completed;
+                form.reset();
+                  // успешно
+            } else {
+                statusBrowser.textContent = messange.failed;     //ошибка
+            }
+            
+        });
+        
+    })  
 }
 
 
-// animations 

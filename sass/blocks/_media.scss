@@ -5,7 +5,7 @@
     .contacts{
         &__img{
             img{
-            object-fit: cover;
+                object-fit: cover;
             }
         }
     }
@@ -34,6 +34,16 @@
             }
         }
     }
+    .technologi{
+        &__wrapper{
+            justify-content: center;
+        }
+        .interest{
+            &__wrapper{
+                justify-content: center;
+            }
+        }
+    }
     .portfolio{
         &__wrapper{
             grid-template-columns: repeat(auto-fit, 280px);
@@ -48,13 +58,14 @@
     }
     .prizes{
         &__item{
-            width: 280px;
+            width: 380px;
         }
         &__wrapper{
-            padding-left: 10px;
+            padding-top: 30px;
+            justify-content: space-around;
         }
     }
-    .contacts {
+    .contacts{
         &__wrapper {
             padding: 0;
             grid-template-columns: 400px 520px;
@@ -63,8 +74,7 @@
             grid-template: 45px 190px 45px / repeat(2, 250px);
         }
     }
-
-
+}
 @media (max-width: 992px){
     .container{
         max-width: 720px;
@@ -77,16 +87,22 @@
     
     .technologi{
         &__wrapper{
-            justify-content: space-around;
+            justify-content: space-between;
         }
         &__item{
             margin-top: 30px;
+            width: 340px;
+            min-height: 230px;
         }
-        .interest__wrapper{
-            flex-direction: column;
-            align-items: center;
+        .interest{
+            &__items{
+                width: 330px;
+            }
+            &__wrapper{
+                justify-content: space-between;
+                margin-top: 50px;
+            }
         }
-        
     }
     .level{
         &__wrapper{
@@ -115,14 +131,17 @@
         }
     }
     .prizes{
-       
         &__item{
-            width: 210px;
+            width: 310px;
             margin-top: 35px;
             font-size: 12px;
             &-title{
                 font-size: 12px;
             }
+        }
+        &__wrapper{
+            column-gap: 0;
+            row-gap: 0;
         }
         &__descr{
             font-size: 10px;
@@ -133,28 +152,42 @@
             grid-template-columns: 300px 400px;
         }
         &__form {
-            grid-template: 45px 190px 45px / repeat(2, 195px);
+            grid-template: 45px 190px 45px/repeat(2,340px);
+            gap: 40px;
         }
         &__btn {
             padding: 8px 25px;
-            line-height: 16px;
+        }
+        &__img{
+            display: none;
         }
     }
-    
+}  
 @media (max-width: 768px){
     .container{
         max-width: 540px;
     }
     .technologi{
         &__wrapper{
-            flex-direction: column;
-            align-items: center;
+            margin-top: 10px;
         }
-        .interest__wrapper{
-            justify-content: center;
-            &__items{
-                margin-top: 60px;
+        &__item{
+            width: 250px;
+            padding: 30px 20px 20px 20px;
+        }
+        .interest{
+            &__wrapper{
+                justify-content: center;
             }
+            &__items{
+                width: 470px;
+            }
+            &__scale{
+                width: 470px;
+            }
+        }  
+        &__items{
+            margin-top: 60px;
         }
     }
     .title{
@@ -171,18 +204,19 @@
     }
     .name{
         padding-top: 40px;
+        &_title{
+            margin-top: 20px;
+        }
         &__wrapper{
             grid-template: 340px auto auto / 1fr;
           
         }
         &__skills{
-            row-gap: 50px;
-        }
-        
-        &__skills{
             grid-template-columns: repeat(2, 260px);
+            row-gap: 30px;
+            margin-top: 15px;
             &-item{
-                grid-template-columns: 40px 200px;
+                grid-template-columns: 40px 445px;
                 column-gap: 20px;
             }
         }
@@ -197,6 +231,9 @@
     }
     .portfolio{
         padding-top: 40px;
+        &__wrapper{
+            grid-template-columns: repeat(auto-fit, 490px);
+        }
     }
     .prizes{
         &__wrapper{
@@ -205,7 +242,7 @@
         }
         &__item{
             margin-top: 35px;
-            width: 60%;
+            width: 80%;
         }
         &__descr{
             font-size: 12px;
@@ -213,7 +250,7 @@
     }
     .contacts {
         padding-top: 40px;
-        &__photo {
+        &__img {
             display: none;
         }
         &__wrapper {
@@ -226,7 +263,7 @@
 }
 @media (max-width: 576px){
     .container{
-        width: 100%;
+        max-width: 460px;
         padding: 0 10px;
     }
     .title{
@@ -243,36 +280,21 @@
     }
     .menu{
         &__block{
-            width: 250px;
+            width: 270px;
         }
         &__social{
-            margin-left: 40px;
             bottom: 20px;
-        }
-        
-    }
-    .menu__btn {
-        width: 170px;
-        font-size: 15px;
-    }
-    .modal{
-        .modal__window{
-            width: 300px;
-            margin: 100px auto;
-        }
-        .modal__btn{
-            width: 220px;
-        }
-        .modal__policy{
-            font-size: 14px;
-        }
+        } 
     }
     .name{
         &__wrapper{
-            grid-template: 340px auto auto / 1fr;
+            grid-template: 340px auto auto / 100%;
         }
         &__skills{
             grid-template-columns: 1fr;
+            &-item{
+                grid-template-columns: 40px 380px;
+            }
         }
     }
     .level{
@@ -289,60 +311,269 @@
         &__subtitle{
             font-size: 22px;
         }
-    .interest{
-        &__items{
-                width: 300px;
+        &__wrapper{
+            justify-content: center;
         }
-        &__scale{
-            width: 300px;
+        &__item{
+            width: 320px;
+        }
+        .interest{
+            &__items{
+                    width: 410px;
+            }
+            &__scale{
+                width: 410px;
+            }
         }
     }
-}
-        .prizes{
-            &__wrapper{
-                flex-direction: column;
-                align-items: center;
-            }
-            &__sale{
+    .portfolio{
+        &__wrapper{
+            grid-template-columns: repeat(auto-fit, 410px);
+        }
+    }
+    .prizes{
+        &__wrapper{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__sale{
+            font-size: 12px;
+        }
+        &__item{
+            width: 350px;
+            margin-top: 35px;
+            &-title{
                 font-size: 12px;
-            }
-            &__item{
-                width: 250px;
-                margin-top: 35px;
-                &-title{
-                    font-size: 12px;
-                } 
-            }
+            } 
         }
     }
-}
-    .contacts {
+    .contacts{
         &__img{
             display: none;
         }
-        padding-bottom: 50px;
-        &__form {
+
+        &__form{
             grid-template: 45px 45px 190px minmax(45px, auto) / 1fr;
         }
-        &__textarea {
+        &__textarea{
             grid-column: unset;
             width: 100%;
         }
-        &__triggers {
+        &__triggers{
             grid-column: unset;
-            grid-template-columns: 1fr;
             column-gap: unset;
             row-gap: 20px;
         }
-        &__btn {
+        &__btn{
             order: 2;
             max-width: 220px;
             margin: 0 auto;
         }
-        &__policy {
+        &__policy{
             width: 180px;
             margin: 0 auto;
             line-height: 18px;
+        }
+    }
+}
+@media (max-width: 480px){
+    .container{
+        max-width: 380px;
+        padding: 0;
+    }
+    .name{
+        &__skills{
+            &-item{
+                grid-template-columns: 40px 301px;
+            }
+        }
+    }
+    .technologi{
+        &__item{
+            width: 320px;
+        }
+        .interest{
+            &__items{
+                    width: 340px;
+            }
+            &__scale{
+                width: 340px;
+            }
+        }
+    }
+    .portfolio{
+        &__wrapper{
+            grid-template-columns: repeat(auto-fit, 360px);
+        }
+    }
+    .prizes{
+        &__wrapper{
+            padding-top: 0;
+        }
+        &__item{
+            width: 320px;
+        }
+        &__text{
+            width: 340px;
+        }
+    }
+    .contacts{
+        &__form{
+            grid-template: 45px 45px 190px minmax(45px,auto) / 1fr;
+        }
+        &__textarea{
+            grid-column: unset;
+            width: 100%;
+        }
+        &__triggers{
+           display: flex;
+           flex-direction: column;
+        }
+        &__btn{
+            order: 2;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+        &__policy{
+            width: 300px;
+        }
+    }
+}
+@media (max-width: 400px){
+    .container{
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .menu{
+        &__block{
+            width: 230px;
+        }
+        &__link{
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+    .hamburger{
+        width: 45px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+    .name{
+        &__text{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        &__skills{
+            &-item{
+                grid-template-columns: 25px 255px;
+            }
+            &-text{
+                font-size: 12px;
+            }
+            &-circle{
+                padding: 10px 0 0 10px;
+                &::before{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        &__wrapper{
+            grid-template: 340px auto auto / 100%;
+        }
+    }
+    .level{
+        padding-top: 0;
+        &__title{
+            font-size: 14px;
+            &::before{
+                width: 30px;
+                height: 30px;
+                top: -5px;
+            }
+        }
+        &__item{
+            &-body{
+                font-size: 12px;
+            }
+            &-icon{
+                &::before{
+                    width: 30px;
+                    height: 30px;
+                }
+                img{
+                    top: 10px;
+                    left: 11px;
+                }
+            }
+            &-head{
+                padding: 45px 0 0 90px;
+            }
+        }
+        .divider{
+            margin: 15px auto 0 auto;
+        }
+    }
+    .technologi{
+        &__title{
+            font-size: 14px;
+            &::before{
+                width: 30px;
+                height: 30px;
+                top: -3px;
+            }
+        }
+        &__item{
+            width: 285px;
+        }
+        .interest{
+            &__items{
+                width: 290px;
+            }
+            &__scale{
+                width: 290px;
+            }
+        }
+    }
+    .portfolio{
+        &__title{
+            font-size: 14px;
+            &::before{
+                width: 30px;
+                height: 30px;
+                top: -5px;
+            }
+        }
+        &__wrapper{
+            grid-template-columns: repeat(auto-fit, 300px);
+        }
+    }
+    .prizes{
+        &__title{
+            font-size: 14px;
+            &::before{
+                width: 30px;
+                height: 30px;
+                top: -5px;
+            }
+        }
+        &__text{
+            width: 270px;
+        }
+        &__item{
+            width: 255px;
+        }
+    }
+    .contacts{
+        &__title{
+            font-size: 14px;
+            &::before{
+                width: 30px;
+                height: 30px;
+                top: -5px;
+            }
         }
     }
 }

@@ -31,6 +31,9 @@
     display: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 .container{
     width: 1140px;
     margin: 0 auto;
@@ -53,4 +56,30 @@ input, textarea{
 }
 html{
     scroll-behavior: smooth;
+}
+
+.topScroll{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #474343;
+    position: fixed;
+    bottom: 30px;
+    right: -100%;
+    z-index: 10;
+    transition: 0.3s;
+    &.active{
+        right: 30px;
+    }
+    a{
+        background: url('../icons/arrowsScrollTop/up-arrrows.png') center (center / cover) no-repeat;
+        width: 45px;
+        height: 40px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5px;
+    }
+   
 }
