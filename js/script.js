@@ -230,4 +230,13 @@ function dataPost(form){
     })  
 }
 
+function hidePrev(){
+    const prev = document.querySelector('.previos');
+
+    setTimeout(() =>{
+        prev.classList.add('active');
+    }, 4000);
+}
+hidePrev();
+
 
