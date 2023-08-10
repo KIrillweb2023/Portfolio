@@ -296,6 +296,9 @@
                 grid-template-columns: 40px 380px;
             }
         }
+        &__img{
+            height: 430px;
+        }
     }
     .level{
         &__wrapper{
@@ -529,11 +532,22 @@
             width: 285px;
         }
         .interest{
+            &_title-before{
+                font-size: 12px;
+                &::before{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &__prozent{
+                font-size: 12px;
+            }
             &__items{
                 width: 290px;
             }
             &__scale{
                 width: 290px;
+                margin-top: 15px;
             }
         }
     }
@@ -573,6 +587,21 @@
                 width: 30px;
                 height: 30px;
                 top: -5px;
+            }
+        }
+        &__btn{
+            &:hover{
+                transform: scale(1);
+            }
+        }
+        &__input{
+            &:hover{
+                transform: scale(1);
+            }
+        }
+        &__textarea{
+            &:hover{
+                transform: scale(1);
             }
         }
     }

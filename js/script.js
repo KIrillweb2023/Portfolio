@@ -1,3 +1,5 @@
+new WOW().init();
+
 const hamburger = document.querySelector('.hamburger'),
       menu = document.querySelector('.menu'),
       closeElem = document.querySelector('.menu__close'),
@@ -43,7 +45,6 @@ function scrollTop(){
     });
 }
 scrollTop();
-console.log(window.scrollY);
 class Technologi{
     constructor(src, alt, title, descr, parentElement){
         this.src = src;
@@ -115,7 +116,7 @@ new Technologi(
     'icons/skills/git.png',
     'Git',
     'GIT',
-    'C помощью этой технологии ваш проект будет разбит по коммитам, что в дальнейшеq ошибке в коде или в неправильной верстке мы смогли откатить версию продукта',
+    'C помощью этой технологии ваш проект будет разбит по коммитам, что в дальнейшей ошибке в коде или в неправильной верстке мы смогли откатить версию продукта',
     '.technologi .technologi__wrapper'
 ).render();
 new Technologi(
@@ -204,7 +205,6 @@ dataPost(form);
 function dataPost(form){
     form.addEventListener('submit', (e) =>{
         e.preventDefault();
-
         let statusBrowser = document.createElement('img');    // создал элемент
         statusBrowser.classList.add('status');      // добавил класс к елементу
         statusBrowser.src = messange.loading;      // загруска при начале отправки на сервер
@@ -225,10 +225,8 @@ function dataPost(form){
                   // успешно
             } else {
                 statusBrowser.textContent = messange.failed;     //ошибка
-            }
-            
-        });
-        
+            }  
+        }); 
     })  
 }
 

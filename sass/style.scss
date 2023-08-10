@@ -10,6 +10,7 @@
 @import 'blocks/sidebar';
 @import 'blocks/hamburger';
 @import 'blocks/name';
+@import 'blocks/messange';
 @import 'blocks/level';
 @import 'blocks/technologi';
 @import 'blocks/interest';
@@ -57,6 +58,7 @@ input, textarea{
 html{
     scroll-behavior: smooth;
 }
+
 
 .topScroll{
     width: 50px;
