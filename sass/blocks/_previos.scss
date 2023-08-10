@@ -19,6 +19,7 @@
     opacity: 0.85;
     z-index: 10;
     &.active{
+        left: -100%;
         .loading{
             transition: 0.6s;
             left: -100%;
