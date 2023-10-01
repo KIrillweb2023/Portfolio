@@ -1,9 +1,7 @@
 
-
-
 .promo{
     min-height: 100vh;
-    background: url("../img/20230410_105238.jpg") no-repeat 50%/cover;
+    background: url("../../img/photo_me.jpg") no-repeat 00%/cover;
     position: relative;
     padding-top: 206px;
     &__btns{
@@ -14,9 +12,13 @@
         justify-content: space-between;
 
     }
+    &__title{
+        color: #fff;
+    }
     &__subtitle{
         position: relative;
         padding-left: 10px;
+        color: #fff;
         z-index: 2;
         @include before_circle;
     }
@@ -25,13 +27,13 @@
         font-style: bold;
         font-weight: 700;
         font-size: 15px;
-        color: #000;
+        color: #fff;
         line-height: 21px;
         text-align: center;
         
         &:hover{
             text-decoration: none;
-            color: #000;
+            color: #fff;
         }
     }
 
